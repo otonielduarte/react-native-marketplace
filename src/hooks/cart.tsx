@@ -36,6 +36,7 @@ const CartProvider: React.FC = ({ children }) => {
         await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(values));
         setProducts(values);
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.error('error during save values');
       }
     },
@@ -50,6 +51,7 @@ const CartProvider: React.FC = ({ children }) => {
           setProducts(JSON.parse(storageProducts));
         }
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.error('error during save values');
       }
     }
